@@ -35,8 +35,8 @@ public:
         }
     }
 
-    void kosaraju() {
-        // step-1 topo order
+    void kosaraju() { // Time Compelxity => O(V+E)
+        // step-1 topo order => O(V+E)
         stack<int> s;
         vector<bool> vis(V, false);
 
@@ -46,7 +46,7 @@ public:
             }
         }
 
-        // step-2 transpose graph
+        // step-2 transpose graph => O(V+E)
         vector<vector<int>> adjT(V);
         for(int u=0; u<V;u++) { // u-->v
             vis[u]=false;
@@ -55,7 +55,7 @@ public:
             }
         }
 
-        // step-3 find components
+        // step-3 find components => O(V+E)
         cout << "Printing the SCC: \n";
         while(s.size()>0) {
             int curr=s.top();
